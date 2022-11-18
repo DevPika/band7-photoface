@@ -15,10 +15,10 @@ WatchFace({
       show_level: hmUI.show_level.ONAL_AOD,
     });
 
-    for ( const [id, widget] of Object.entries( style.widgets ) ) {
+    for ( const widget of style.widgets ) {
       // TODO order of widget creation matters, fix it somehow
       // Priority, layer sorting variable, but extra computation
-      if (id !== constants.ANALOG_AOD) {
+      if (widget.name !== constants.ANALOG_AOD) {
         hmUI.createWidget(hmUI.widget[widget.type], {
           ...widget.config, show_level: hmUI.show_level.ONLY_NORMAL});
       } else {
